@@ -1,0 +1,14 @@
+
+<h3>Publier un nouveau gossip</h3>
+
+ <%= form_tag url_for(action: 'create'), method: "post" do %>
+      <%= label_tag 'Title' %>
+      <%= text_field_tag 'title', @gossips.title %>
+      <br /> <br />
+
+      <%= label_tag 'Content' %>
+      <%= text_area_tag 'content', @gossips.content %>
+      <br /> <br />
+
+      <%= submit_tag "Create Post" %>
+    <% end %>

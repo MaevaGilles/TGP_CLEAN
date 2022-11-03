@@ -1,0 +1,6 @@
+<h2>Commentaires:</h2>
+
+<% @comments.each do |comment| %>
+   <p><%= comment.content %></p>
+   <p><%= comment.user_id %></p>
+<%end%>

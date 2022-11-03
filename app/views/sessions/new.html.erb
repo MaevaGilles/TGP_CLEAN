@@ -1,0 +1,22 @@
+
+<div style="text-align: center; padding-top: 5rem;">
+<div class="card" style="width: 18rem; display: inline-block">
+  <div class="card-body">
+<%= form_tag url_for(action: 'create'), method: "post" do %>
+  <%= label_tag 'Username' %>
+  <%= text_field_tag 'email', @users.email %>
+  <br /> <br />
+
+  <%= label_tag 'Password' %>
+  <%= text_area_tag 'password_digest', @users.password_digest %>
+  <br /> <br />
+
+  <%= submit_tag "Login" %>
+<% end %>   
+  </div>
+</div>
+
+</div>
+
+
+</div>

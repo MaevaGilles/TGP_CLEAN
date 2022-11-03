@@ -1,0 +1,65 @@
+<h2 style = "color: #ffffff">Nouveau compte</h2>
+
+   <%= form_for @user do |f| %>
+
+    <div class='form-group'style="width:30%">
+      <label style = "color: #ffffff">Prénom</label><br>
+      <%= f.text_field :first_name, class:'form-control' %>
+    </div>
+
+    <br>
+
+    <div class='form-group' style="width:30%">
+      <label style = "color: #ffffff; width:70px">Nom</label><br>
+      <%= f.text_field :last_name, class:'form-control' %>
+    </div>
+
+    <br>
+
+    <div class='form-group'style="width:30%">
+      <label style = "color: #ffffff">Ville</label><br>
+      <%= f.collection_select :city_id, @cities, :id, :name,{}, class:'form-control' %>
+    </div>
+
+    <br>
+
+    <div class='form-group'style="width:30%">
+      <label style = "color: #ffffff">Descripti<span class='red'>o</span>n</label><br>
+      <%= f.text_area :description, class:'form-control' %>
+    </div>
+
+    <br>
+
+    <div class='form-group'style="width:30%">
+      <label style = "color: #ffffff">Age</label><br>
+      <%= f.number_field :age, in:18..99, class:'form-control' %>
+    </div>
+
+    <br>   
+
+    <div class='form-group'style="width:30%">
+      <label style = "color: #ffffff">Email</label><br>
+      <%= f.email_field :email, class:'form-control' %>
+    </div>
+
+    <br> 
+
+    <div class='form-group'style="width:30%">
+      <label style = "color: #ffffff">Mot de passe</label><br>
+      <%= f.password_field :password, class:'form-control' %>
+    </div>
+
+    <br>
+
+    <div class='form-group'style="width:30%">
+      <label style = "color: #ffffff">Mot de passe</label><br>
+      <%= f.password_field :password_confirmation, class:'form-control' %>
+    </div>
+
+    <br> 
+                        
+    <div class='form-group'style="width:30%">
+      <button type=submit class='btn btn-success'>S'inscrire</button>
+    </div>
+
+  <% end %>

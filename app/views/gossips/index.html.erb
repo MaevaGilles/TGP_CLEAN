@@ -1,0 +1,19 @@
+<h1 style="color: #ffffff; text-align: center;">Bienvenue sur The Gossip Project</h1>
+
+
+<div class="container-fluid d-flex flex-wrap justify-content-center row xy-3">
+    <% @gossips.each do |gossip| %>
+<div class="card text-bg-light mb-3" style="max-width: 18rem; margin: 2rem;">
+    <div class="card-body">
+            <h5 class="card-title"><%= gossip.title %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= gossip.user.first_name %></h6>
+            <p class="card-text"><%= gossip.content %></p>
+            <a href="/gossips/<%= gossip.id %>" class="btn btn-primary btn-sm">Details</a>
+            <a href="/users/<%= gossip.user.id %>" class="btn btn-secondary btn-sm">Author</a>
+            <a href="/cities/<%= gossip.user.city_id %>" class="btn btn-success btn-sm">City</a>
+        </div>
+        </div>
+    <%end%>
+</div>
+
+

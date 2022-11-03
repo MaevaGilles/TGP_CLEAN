@@ -1,0 +1,15 @@
+
+<h2>A propos de l'auteur</h2>
+
+<div class="">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"><%= @users.first_name%></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= @users.last_name %></h6>
+            <p class="card-text">Email: <%= @users.email %></p>
+            <p class="card-text">City: <%= @users.city.name %></p>
+            <p class="card-text">Age: <%= @users.age %></p>
+            <p class="card-text">Description: <%= @users.description %></p>
+        </div>
+    </div>
+</div>

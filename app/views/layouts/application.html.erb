@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Okgossipproject</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application", defer: true %>
+  </head>
+
+  <body>
+  <body style="background-color: #042c65">
+  <header class="p-3 text-bg-dark justify-content-center" >
+
+  <a href="/index" class="nav-link px-2 text-secondary"style = "text-align: center;">
+    <%= image_tag("logos/logo.png", width: '157px', alt: "logo") %>
+  </a>
+    
+
+    
+    
+    
+    <div class="container" style = "text-align: center; padding-top: 1rem;">
+      <div class="justify-content-centert">
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center" >
+          <li  style ="margin: 10px"><a href="/index" class="nav-link px-2 text-secondary justify-content-center">Home</a></li>
+          <li style ="margin: 10px"><a href="/team" class="nav-link px-2 text-white justify-content-center">Team</a></li>
+          <li style ="margin: 10px"><a href="/contact" class="nav-link px-2 text-white justify-content-center">Contact</a></li>
+          <li style ="margin: 10px"><a href="/cities" class="nav-link px-2 text-white justify-content-center">Villes</a></li>
+          <li class="nav-item"  style ="margin: 10px"><a href="/sessions/new" class="btn btn-success" method="DELETE">Connexion</a></li>
+          <li class="nav-item" style ="margin: 10px"><a href="/users/new" class="btn btn-light" method="DELETE">Se créer un compte</a></li>
+          <li><a href="<%= session_path(session.id) %>" class="btn btn-outline-danger" method="DELETE"  style ="margin: 10px">Déconnexion</a>
+      </li>
+
+       </ul>
+      </div>
+    </div>
+  </header>
+
+    <div class="container">
+  
+
+    <%= yield %>
+    </div>
+  </body>
+</html>

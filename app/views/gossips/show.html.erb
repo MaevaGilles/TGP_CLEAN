@@ -1,0 +1,25 @@
+<h1>Le gossip en détails</h1>
+<h3>Gossip n°<%= params["id"] %></h3>
+
+<div class="">
+    <div class="card" style="width: 12rem;">
+        <div class="card-body">
+            <h5 class="card-title">Title: <%= @gossips.title %></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Author: <%= @gossips.user.first_name%></h6>
+            <p class="card-text">Content: <%= @gossips.content %></p>
+            <a href= "<%= edit_gossip_path(@gossips.id) %>" class="btn btn-primary text-decoration-none link-light">Edit</a>
+            <%= link_to "Delete", gossip_path, method: :delete, class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+    </div>
+</div>
+
+<br/>
+
+<%= form_tag(comments_path, method: 'post') do %>
+  <%= hidden_field_tag('gossip_id', params[:id] )%>
+  <%= label_tag 'Comment : ' %>
+  <%= text_area_tag 'content', nil %>
+  <br /> <br />
+
+
+<% end %>

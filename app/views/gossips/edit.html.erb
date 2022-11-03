@@ -1,0 +1,13 @@
+<h1>Modification du gossip</h1>
+
+ <%= form_tag url_for(action: 'update'), method: "put" do %>
+      <%= label_tag 'Title' %>
+      <%= text_field_tag 'title', @gossips.title %>
+      <br /> <br />
+
+      <%= label_tag 'Content' %>
+      <%= text_area_tag 'content', @gossips.content %>
+      <br /> <br />
+
+      <%= submit_tag "Edit Post" %>
+<% end %>
